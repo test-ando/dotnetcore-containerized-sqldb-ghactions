@@ -31,7 +31,7 @@ jobs:
       with:
         context: ./application/
         push: true
-        tags: nttdatakansaiacr.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_d54e3d79a7414f05bc22c965c64ae903 }}/hello-world:${{ github.sha }}
+        tags: nttdatakansaiacr.azurecr.io/hello-world:${{ github.sha }}
         file: ./application/Dockerfile
 
   deploy:
