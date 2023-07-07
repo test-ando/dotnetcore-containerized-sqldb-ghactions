@@ -29,9 +29,10 @@ jobs:
     - name: Build and push container image to registry
       uses: docker/build-push-action@v3
       with:
+        context: ./application/
         push: true
-        tags: nttdatakansaiacr.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_278af72496914ba48bc53bdadca8b9eb }}/hello-world:${{ github.sha }}
-        file: ./Dockerfile
+        tags: nttdatakansaiacr.azurecr.io/hello-world:v1
+        file: ./application/Dockerfile
 
   deploy:
     runs-on: ubuntu-latest
